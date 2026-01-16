@@ -2,7 +2,7 @@ import express from "express";
 import {
     getRealtimePanels,
     getTodayUsage,
-} from "../controller/energy.controller.js";
+} from "../controllers/energy.controller.js";
 
 const router = express.Router();
 
