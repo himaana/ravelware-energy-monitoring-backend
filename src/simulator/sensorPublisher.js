@@ -27,7 +27,7 @@ function generatedPayload() {
         pf: +Math.random().toFixed(2),
         vunbal: +Math.random().toFixed(2),
         iunbal: +Math.random().toFixed(2),
-        time: +Math.random().toFixed(2),
+        time: new Date().toISOString(),
     };
 }
 
