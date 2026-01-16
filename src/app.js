@@ -1,16 +1,14 @@
 import express from "express";
-import dotenv from "dotenv";
-
-dotenv.config();
+import { ENV } from "./config/env.js";
+import "./mqtt/subscriber.js";
 
 const app = express();
 app.use(express.json());
 
-app.get("/health", (req, res) => {
+app.get("/health", (_, res) => {
     res.json({ status: "OK" });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Backend running on port ${PORT}`);
+app.listen(ENV.PORT, () => {
+    console.log(`Backend running on port ${ENV.PORT}`);
 });
