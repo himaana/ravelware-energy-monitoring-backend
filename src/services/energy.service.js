@@ -22,3 +22,12 @@ export async function writeEnergyData(panel, payload) {
     writeApi.writePoint(point);
     await writeApi.flush();
 }
+
+export function calculateTodayUsage(firstKwh, lastKwh) {
+    if (firstKwh == null || lastKwh == null) return 0;
+    return +(lastKwh - firstKwh).toFixed(2);
+}
+
+export function calculateCost(kwh) {
+    return Math.round(kwh * 1500);
+}
